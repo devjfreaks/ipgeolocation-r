@@ -1,0 +1,30 @@
+Package: ipgeolocation
+Type: Package
+Title: Client for the IPGeolocation.io IP Location API
+Version: 0.1.0
+Authors@R: 
+    c(
+        person("Anwar", "Ahmed", email = "anwar@jfreaks.com", role = c("aut", "cre")),
+        person("IPGeolocation", "IO", role = "cph")
+    )
+Description: Provides functions to query the IPGeolocation.io
+    IP Geolocation API and related endpoints. Supports retrieval of
+    IP location data (including continent, country, state, city,
+    coordinates, EU status, geoname ID, DMA code, locality, accuracy
+    radius, confidence, and geo_accuracy), country metadata (calling
+    code, TLD, languages), network information (connection type,
+    routing, anycast), currency details, ASN data, company
+    information, time zone data, and IP abuse contact details.
+    Optional objects such as security, hostname, geo_accuracy,
+    dma_code, abuse, and user_agent can be requested via the
+    'include' parameter (paid plans only). Response filtering is
+    supported using the 'fields' and 'excludes' parameters,
+    including dot notation for nested objects. Returns parsed API
+    responses as R objects.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    httr2
+URL: https://ipgeolocation.io
+BugReports: https://github.com/ipgeolocation/ipgeolocation-r/issues
+RoxygenNote: 7.3.3
