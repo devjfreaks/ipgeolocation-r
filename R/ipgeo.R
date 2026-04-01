@@ -13,7 +13,7 @@
 #' @param fields Optional character vector of fields to include.
 #' @param excludes Optional character vector of fields to exclude.
 #' @param include Optional character vector of additional objects
-  (e.g., "security", "hostname", "geo_accuracy", "abuse",
+#'   (e.g., "security", "hostname", "geo_accuracy", "abuse",
 #'   "user_agent").
 #'
 #' @return A list containing the parsed API response.
