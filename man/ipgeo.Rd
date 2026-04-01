@@ -2,39 +2,42 @@
 % Please edit documentation in R/ipgeo.R
 \name{ipgeo}
 \alias{ipgeo}
-\title{Query IPGeolocation.io IP Location API}
+\title{Query the 'IPGeolocation.io IP Location API'}
 \usage{
 ipgeo(ip, api_key, fields = NULL, excludes = NULL, include = NULL)
 }
 \arguments{
-\item{ip}{IP address (character)}
+\item{ip}{A character string specifying the IP address.}
 
-\item{api_key}{Your API key (character)}
+\item{api_key}{A character string containing your API key.}
 
-\item{fields}{Optional. Character vector or comma-separated string.
-Supports object names (e.g., "location") and dot notation
-(e.g., "location.city").}
+\item{fields}{Optional character vector of fields to include.}
 
-\item{excludes}{Optional. Character vector or comma-separated string.
-Supports object names and dot notation.}
+\item{excludes}{Optional character vector of fields to exclude.}
 
-\item{include}{Optional. Character vector or comma-separated string.
-Accepts module names only (no dot notation).}
+\item{include}{Optional character vector of additional objects
+(e.g., "security", "hostname", "geo_accuracy", "abuse",
+"user_agent").}
 }
 \value{
-Parsed JSON response as a list.
+A list containing the parsed API response.
 }
 \description{
-Query IPGeolocation.io IP Location API
+Queries the 'IPGeolocation.io IP Location API'
+(<https://ipgeolocation.io/documentation/ip-location-api.html>)
+to retrieve IP geolocation and related network intelligence data.
+}
+\details{
+Supports response filtering using 'fields' and 'excludes'
+parameters (dot notation supported), and optional objects
+using the 'include' parameter.
 }
 \examples{
-\dontrun{
-ipgeo(
-  ip = "8.8.8.8",
-  api_key = Sys.getenv("IPGEOLOCATION_API_KEY"),
-  fields = c("location", "location.city"),
-  excludes = "location.zipcode",
-  include = c("security", "hostname")
-)
+api_key <- Sys.getenv("IPGEOLOCATION_API_KEY")
+
+if (nzchar(api_key)) {
+  result <- ipgeo("8.8.8.8", api_key)
+  str(result)
 }
+
 }
